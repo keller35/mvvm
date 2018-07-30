@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mvvm</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="text">
+        {{ text }}
+        <button @click="reset" style="display:block;">重置</button>
+    </div>
+    <script src="./index.js"></script>
+    <script>
+        var vm = new Mvvm({
+            el: 'app',
+            data: {
+                text: 'hello world'
+            },
+            methods: {
+                reset() {
+                    this.text = '';
+                },
+            },
+        });
+    </script>
+</body>
+</html>
